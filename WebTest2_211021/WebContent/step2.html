@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+	function check() {
+		var angelRadio = document.angelForm.angel;
+		var flag = true;
+		for (i = 0; i < angelRadio.length; i++) {
+			if (angelRadio[i].checked) {
+				flag = false;
+				break;
+			}
+		}
+		if (flag) {
+			alert("좋아하는 동물을 체크해주세요.");
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	당신이 좋아하는 동물은?
+	<br>
+	<form name="angelForm" method="get" action="RadioServlet"
+		onsubmit="return check();">
+		<input type="radio" name="angel" value="b">액자 <br> <input
+			type="radio" name="angel" value="lee">김태희 <br> <input
+			type="radio" name="angel" value="m">회화 <br> <input
+			type="submit" value="찜하기">
+	</form>
+
+</body>
+</html>

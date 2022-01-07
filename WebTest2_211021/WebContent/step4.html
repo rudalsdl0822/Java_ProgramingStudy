@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+	function checkId() {
+		var idTxt = document.loginForm.userId;
+		var pasTxt = document.loginForm.userPass;
+		if (idTxt.value == "") {
+			alert("아이디를 입력하세요.");
+			idTxt.focus();
+			return false;
+		}
+		if (pasTxt.value == "") {
+			alert("비밀번호를 입력하세요.");
+			pasTxt.focus();
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<form name="loginForm" method="post" action="LoginServlet"
+		onsubmit="return checkId()">
+		아이디 <input type="text" name="userId"> <br> 비밀번호 <input
+			type="password" name="userPass"><br> <input
+			type="submit" value="로그인">
+	</form>
+</body>
+</html>

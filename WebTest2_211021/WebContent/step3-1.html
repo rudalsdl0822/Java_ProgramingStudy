@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+	function checkSelect() {
+		var ag = document.selectForm.friend;
+		if (ag.value == "") {
+			alert("제목을 선택해주세요.");
+		} else {
+			// javascript에서 서버로 submit한다.
+			document.selectForm.submit();
+		}
+	}
+</script>
+</head>
+<body>
+	보고 싶은 사진 제목은?
+	<br>
+	<form name="selectForm" method="get" action="SelectServlet">
+		<select name="friend" onchange="checkSelect()">
+			<option value="">---</option>
+			<option value="b">액자</option>
+			<option value="lee">김태희</option>
+			<option value="m">회화</option>
+		</select>
+	</form>
+</body>
+</html>

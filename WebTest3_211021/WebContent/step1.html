@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+	function checkMenu() {
+		var menu = document.menuForm.menu;
+		var flag = true;
+		for (i = 0; i < menu.length; i++) {
+			if (menu[i].checked) {
+				flag = false;
+				break;
+			}
+		}
+		if (flag) {
+			alert("메뉴를 골라주세요.");
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<form name="menuForm" method="get" action="CheckBoxServlet"
+		onsubmit="return checkMenu();">
+		<input type="checkbox" name="menu" value="피자">피자<br> <input
+			type="checkbox" name="menu" value="꽃등심">꽃등심<br> <input
+			type="checkbox" name="menu" value="다금바리">다금바리<br> <input
+			type="submit" value="전송">
+	</form>
+</body>
+</html>
